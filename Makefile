@@ -39,7 +39,7 @@ help:
 	#   * superclean: delete all generated files with no exceptions
 
 video:
-	ffmpeg -r '$(video_fps)' -pattern_type glob -i '$(name)-*.png' \
+	ffmpeg -r '$(video_fps)' -pattern_type glob -i 'png/$(name)-*.png' \
 		-vcodec h264 -qmax 10 -s '$(video_width)x$(video_height)' \
 		mp4/video.mp4
 
