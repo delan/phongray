@@ -6,19 +6,9 @@ camera {
 	up z
 	right y * 16 / 9
 	sky z
-	location <5, 5, 1>
+	location <3, 3, 1>
 	look_at <-1, -1, 1>
-}
-
-light_source { <0, 1, 1> color White }
-
-torus {
-	0.4, 0.05
-	translate <0, 2, 0.45>
-	texture {
-		pigment { color rgb <0.1, 0.1, 0.1> }
-		finish { phong 0.5 }
-	}
+	rotate <0, 0, clock * 720>
 }
 
 sphere {
@@ -82,4 +72,4 @@ merge {
 
 background { color DarkSlateGrey }
 
-light_source { <2, 2, 2> color White }
+light_source { <4, 4, 4> color White }
