@@ -8,11 +8,11 @@ camera {
 	sky z
 	location <3, 3, 1>
 	look_at <-1, -1, 1>
-	rotate <0, 0, clock * 720>
+	rotate <0, 0, clock * 36>
 }
 
 sphere {
-	<2, 0, 1.5 - (clock * 2 - 1) * (clock * 2 - 1)>, 0.5
+	<2, 0, 1.5 - pow((clock - floor(clock)) * 2 - 1, 2)>, 0.5
 	texture {
 		pigment { color Magenta }
 		finish { phong 0.5 }

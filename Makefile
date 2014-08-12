@@ -2,13 +2,13 @@ path = $(HOME)/phongray
 name = hello
 user = 17065012
 server = ark.cs.curtin.edu.au
-frames = 120
+frames = 600
 rough_width = 320
 rough_height = 180
 final_width = 4096
 final_height = 2304
-video_width = 1280
-video_height = 720
+video_width = 4096
+video_height = 2304
 video_fps = 60
 
 help:
