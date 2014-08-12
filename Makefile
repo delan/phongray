@@ -7,8 +7,8 @@ rough_width = 320
 rough_height = 180
 final_width = 4096
 final_height = 2304
-video_width = 4096
-video_height = 2304
+video_width = 3840
+video_height = 2160
 video_fps = 60
 
 help:
@@ -25,8 +25,8 @@ help:
 	#   * rough_height: the height of the rough render [180]
 	#   * final_width: the width of the final render [4096]
 	#   * final_height: the height of the final render [2304]
-	#   * video_width: the width of the video [1280]
-	#   * video_height: the height of the video [720]
+	#   * video_width: the width of the video [3840]
+	#   * video_height: the height of the video [2160]
 	#
 	# commands:
 	#   * setup: generate and upload an SSH key pair
@@ -39,9 +39,17 @@ help:
 	#   * superclean: delete all generated files with no exceptions
 
 video:
-	ffmpeg -pattern_type glob -i 'png/$(name)-*.png' \
-		-vcodec h264 -s '$(video_width)x$(video_height)' \
-		-r '$(video_fps)' mp4/video.mp4
+	ffmpeg \
+		-r '$(video_fps)' \
+		-pattern_type glob \
+		-i 'png/$(name)-*.png' \
+		-vcodec h264 \
+		-s '$(video_width)x$(video_height)' \
+		-r '$(video_fps)' \
+		-movflags faststart \
+		-bf 2 \
+		-pix_fmt yuv420p \
+		mp4/video.mp4
 
 setup:
 	ssh-keygen -t rsa -C phongray -N '' -f ssh/phongkey
