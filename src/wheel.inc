@@ -75,7 +75,7 @@
 			WheelSpokes(7, Diameter / 2, 0.04)
 			WheelHub(0.16, 0.05)
 		}
-		WheelHoles(7, 0.024, 0.05)
+		WheelHoles(5, 0.024, 0.05)
 	}
 #end
 
