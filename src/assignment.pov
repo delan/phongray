@@ -165,7 +165,11 @@ object {
 			translate <-0.7, +0.25, 0.310825>
 		}
 		light_source {
-			<2, 0, 2>
+			<2, +0.1, 2>
+			color White
+		}
+		light_source {
+			<2, -0.1, 2>
 			color White
 		}
 		sphere {
